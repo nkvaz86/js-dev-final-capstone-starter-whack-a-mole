@@ -1,9 +1,9 @@
 const holes = document.querySelectorAll('.hole');
 const moles = document.querySelectorAll('.mole');
-const startButton = document.querySelector('.start');
+const startButton = document.querySelector('#start');
 // TODO: Add the missing query selectors:
-const score = document.querySelector('.score'); 
-const timerDisplay = document.querySelector('.timer');
+const score = document.querySelector('#score'); 
+const timerDisplay = document.querySelector('#timer');
 let time = 0;
 let timer;
 let lastHole = 0;
@@ -122,11 +122,12 @@ function gameOver(time) {
 */
 function showUp() {
   // Use setDelay() to get the delay value based on difficulty
-  const difficulty = 'hard'; // You can set the difficulty level (easy, normal, hard)
+  const difficulty = 'normal'; // You can set the difficulty level (easy, normal, hard)
   const delay = setDelay(difficulty);
   // Use chooseHole() to get a random hole
   const holesArray = ['hole0','hole1', 'hole2', 'hole3', 'hole4', 'hole5', 'hole6', 'hole7', 'hole8'];
   const hole = chooseHole(holesArray);
+  console.log (hole)
   // Call showAndHide() with the obtained delay and hole
   return showAndHide(hole, delay);
 }
@@ -158,11 +159,18 @@ function showAndHide(hole, delay) {
 *
 */
 function toggleVisibility(hole) {
+  let holeNum = document.querySelector(`#${hole}`);
   // Add hole.classList.toggle() to add or remove the "show" class
-  hole.classList.toggle('show');
+  //holeNum.classList.toggle('show');
+  if (holeNum.classList.contains('show')){
+    holeNum.classList.remove('show')
+  }
+  else {
+    holeNum.classList.add('show')
+  };
   
   // Return the updated hole
-  return hole;
+  return holeNum;
 }
 
 /**
@@ -179,7 +187,7 @@ function updateScore() {
   // Increment the points global variable by 1 point
   points++;
   // Update score.textContent with points
-  const score = document.querySelector('.score'); 
+  const score = document.querySelector('#score'); 
   score.textContent = points;
   // Return points
   return points;
@@ -196,7 +204,7 @@ function clearScore() {
   // Set the points global variable to 0
   points = 0;
   // Update score.textContent with the new value (0 in this case)
-  const score = document.querySelector('.score');
+  const score = document.querySelector('#score');
   score.textContent = points;
   // Return points
   return points;
@@ -237,6 +245,7 @@ function startTimer() {
 function whack(event) {
   // Call updateScore() to increment the score
   updateScore();
+  showUp();
   // Return points
   return points;
 }
@@ -284,6 +293,9 @@ function stopGame(){
 *
 */
 function startGame() {
+  clearScore();
+  startTimer();
+  setEventListeners();
   setDuration(10);
   showUp();
   return "game started";
