@@ -245,7 +245,12 @@ function startTimer() {
 function whack(event) {
   // Call updateScore() to increment the score
   updateScore();
-  showUp();
+  
+  // Check if the timer is still running
+  if (time > 0) {
+    showUp();
+  }
+
   // Return points
   return points;
 }
