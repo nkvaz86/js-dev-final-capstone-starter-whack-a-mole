@@ -1,50 +1,68 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./src/styles.css">
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      .game-container {
+        text-align: center;
+      }
+    </style>
   </head>
   <body>
-    <h1 id="title">Whack A Mole</h1>
-    <div>
+    <div class="game-container">
+      <h1 id="title">Whack A Mole</h1>
       <div>
-        <h2>Click Start to play!</h2>
-        <button id="start">Start</button>
-      </div>
-      <div>
-        <h2>Score: <span id="score">0</span></h2>
-      </div>
-      <div>
+        <div>
+          <h2>Click Start to play!</h2>
+          <button id="start">Start</button>
+        </div>
+        <div>
+          <h2>Score: <span id="score">0</span></h2>
+        </div>
+        <div>
           <h2><span id="timer">0</span> Seconds Left:</h2>
+        </div>
       </div>
-    </div>
-    <div class="grid">
-      <div id="hole0" class="hole">
-        <div id="mole0" class="mole"></div>
+      <div class="grid">
+        <div id="hole0" class="hole">
+          <div id="mole0" class="mole"></div>
+        </div>
+        <div id="hole1" class="hole">
+          <div id="mole1" class="mole"></div>
+        </div>
+        <div id="hole2" class="hole">
+          <div id="mole2" class="mole"></div>
+        </div>
+        <div id="hole3" class="hole">
+          <div id="mole3" class="mole"></div>
+        </div>
+        <div id="hole4" class="hole">
+          <div id="mole4" class="mole"></div>
+        </div>
+        <div id="hole5" class="hole">
+          <div id="mole5" class="mole"></div>
+        </div>
+        <div id="hole6" class="hole">
+          <div id="mole6" class="mole"></div>
+        </div>
+        <div id="hole7" class="hole">
+          <div id="mole7" class="mole"></div>
+        </div>
+        <div id="hole8" class="hole">
+          <div id="mole8" class="mole"></div>
+        </div>
+        <!--Added the missing holes and moles. -->
       </div>
-      <div id="hole1" class="hole">
-        <div id="mole1" class="mole"></div>
-      </div>
-      <div id="hole2" class="hole">
-        <div id="mole2" class="mole"></div>
-      </div>
-      <div id="hole3" class="hole">
-        <div id="mole3" class="mole"></div>
-      </div>
-      <div id="hole4" class="hole">
-        <div id="mole4" class="mole"></div>
-      </div>
-      <div id="hole5" class="hole">
-        <div id="mole5" class="mole"></div>
-      </div>
-      <div id="hole6" class="hole">
-        <div id="mole6" class="mole"></div>
-      </div>
-      <div id="hole7" class="hole">
-        <div id="mole7" class="mole"></div>
-      </div>
-      <div id="hole8" class="hole">
-        <div id="mole8" class="mole"></div>
-      </div>
-      <!--Added the missing holes and moles. -->
     </div>
     <script src="./src/index.js"></script>
   </body>
