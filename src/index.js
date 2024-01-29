@@ -122,14 +122,14 @@ function gameOver(time) {
 */
 function showUp() {
   // Use setDelay() to get the delay value based on difficulty
-  const difficulty = 'normal'; // You can set the difficulty level (easy, normal, hard)
+  const difficulty = 'easy'; // You can set the difficulty level (easy, normal, hard)
   const delay = setDelay(difficulty);
   // Use chooseHole() to get a random hole
-  const holesArray = ['hole0','hole1', 'hole2', 'hole3', 'hole4', 'hole5', 'hole6', 'hole7', 'hole8'];
+  const holesArray = ['hole0', 'hole1', 'hole2', 'hole3', 'hole4', 'hole5', 'hole6', 'hole7', 'hole8'];
   const hole = chooseHole(holesArray);
-  console.log (hole)
+  console.log(hole);
   // Call showAndHide() with the obtained delay and hole
-  return showAndHide(hole, delay);
+  showAndHide(hole, delay);
 }
 
 /**
@@ -216,9 +216,14 @@ function clearScore() {
 *
 */
 function updateTimer() {
-  if (time > 0){
+  if (time > 0) {
     time -= 1;
     timerDisplay.textContent = time;
+    // Show moles only if the timer is still running
+    showUp();
+  } else {
+    // If the timer reaches 0, stop the game
+    stopGame();
   }
   return time;
 }
