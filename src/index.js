@@ -102,8 +102,7 @@ function chooseHole(holes) {
 function gameOver(time) {
   if (time > 0) {
     // If time is greater than 0, continue the game
-    const timeoutId = showUp();
-    return timeoutId;
+    return showUp();
   } else {
     // If time is 0 or less, stop the game
     const gameStopped = stopGame();
@@ -250,12 +249,6 @@ function startTimer() {
 function whack(event) {
   // Call updateScore() to increment the score
   updateScore();
-  
-  // Check if the timer is still running
-  if (time > 0) {
-    showUp();
-  }
-
   // Return points
   return points;
 }
