@@ -15,6 +15,7 @@ body {
   height: 100vh;
   margin: 0;
   overflow: hidden; /* Prevent content overflow */
+  border: 20px solid #ffffff; /* Add a 20px white border around the body */
 }
 
 h1, h2, #start, #timer {
