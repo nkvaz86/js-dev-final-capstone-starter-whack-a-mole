@@ -12,7 +12,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  /*height: 100vh;*/
   margin: 0;
   border: 20px solid #ffffff; /* Add a 20px white border around the body */
 }
