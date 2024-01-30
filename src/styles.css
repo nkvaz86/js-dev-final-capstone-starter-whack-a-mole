@@ -14,7 +14,6 @@ body {
   align-items: center;
   height: 100vh;
   margin: 0;
-  /* overflow: hidden; */ /* Remove this line to allow scrolling */
   border: 20px solid #ffffff; /* Add a 20px white border around the body */
 }
 
@@ -53,7 +52,6 @@ h2 {
 
 .hole {
   flex: 1 0 33.33%;
-  overflow: hidden;
   position: relative;
 }
 
