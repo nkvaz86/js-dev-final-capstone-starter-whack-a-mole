@@ -227,13 +227,16 @@ function updateTimer() {
   if (time > 0) {
     time -= 1;
     timerDisplay.textContent = time;
-    // Show moles only if the timer is still running
-    showUp();
   } else {
     // If the timer reaches 0, stop the game
     stopGame();
+    return;
   }
-  return time;
+
+  // Show moles only if the timer is still running
+  if (!isMoleVisible) {
+    showUp();
+  }
 }
 
 /**
