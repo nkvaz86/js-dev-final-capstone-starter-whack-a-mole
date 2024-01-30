@@ -9,6 +9,7 @@ let timer;
 let lastHole = 0;
 let points = 0;
 let difficulty = "easy";
+let isMoleVisible = false; // Flag to track whether a mole is currently visible
 
 /**
  * Generates a random integer within a range.
@@ -99,7 +100,6 @@ function chooseHole(holes) {
 *  //   return gameStopped
 *
 */
-let isMoleVisible = false; // Flag to track whether a mole is currently visible
 
 function gameOver(time) {
   if (time > 0) {
