@@ -99,10 +99,14 @@ function chooseHole(holes) {
 *  //   return gameStopped
 *
 */
+let isMoleVisible = false; // Flag to track whether a mole is currently visible
+
 function gameOver(time) {
   if (time > 0) {
     // If time is greater than 0, continue the game
-    return showUp();
+    if (!isMoleVisible) {
+      return showUp();
+    }
   } else {
     // If time is 0 or less, stop the game
     const gameStopped = stopGame();
@@ -140,12 +144,17 @@ function showUp() {
 *
 */
 function showAndHide(hole, delay) {
+  // Set the flag to indicate that a mole is currently visible
+  isMoleVisible = true;
+
   // Call the toggleVisibility() function to add the show class
   toggleVisibility(hole);
 
   const timeoutID = setTimeout(() => {
     // Call the toggleVisibility() function to remove the show class when the timer times out
     toggleVisibility(hole);
+    // Reset the flag when the mole is hidden
+    isMoleVisible = false;
   }, delay); // Change the setTimeout() delay to the one provided as a parameter
 
   return timeoutID;
