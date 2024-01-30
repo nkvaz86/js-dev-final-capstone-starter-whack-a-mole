@@ -9,6 +9,14 @@ html {
   z-index:0;
 }
 
+body {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100vh;
+  margin: 0;
+}
+
 h1 {
   text-align: center;
   font-size: 90px;
